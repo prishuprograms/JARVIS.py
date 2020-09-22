@@ -92,8 +92,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('', '')
-    server.sendmail('', to, content)
+    server.login('your email', 'your password')
+    server.sendmail('your email same as above', to, content)
     server.close() 
 
 dictid = { "Specify your name and email id corespondingly.."
