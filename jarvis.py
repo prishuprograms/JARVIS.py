@@ -88,7 +88,7 @@ if __name__ == "__main__":
                 webbrowser.open("google.com")
                 speak("Opening Google")
             elif 'play music' in query:
-                music_dir = 'C:\\Users\\91829\\Desktop\\Downloads\\Songs'
+#                 music_dir = '(Your Music Dir.)'
                 songs = os.listdir(music_dir)
                 print(songs)
                 os.startfile(os.path.join(music_dir, songs[0]))
@@ -100,13 +100,7 @@ if __name__ == "__main__":
                 codepath = "C:\\Users\\91829\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
                 os.startfile(codepath)
                 speak("Opening Whatsapp")
-            elif 'open cmd' in query:
-                codepath = "%windir%\system32\cmd.exe"
                 os.startfile(codepath)
-            elif 'open vs code' in query:
-                codepath = "C:\\Users\\91829\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-                os.startfile(codepath)
-                speak("Opening VS code")
             elif 'hello to my friend' in query:
                 speak("Hello one and all")
             elif 'what is the weather' in query:
@@ -135,7 +129,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
+                        app_icon = "clock.ico",
                         timeout = 10)
                 elif local_time < 60.0:
                     speak(f'Reminder set for {local_time} seconds')
@@ -144,7 +138,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
+                        app_icon = "clock.ico",
                         timeout = 10)
                 elif local_time > 60.0:
                     speak(f'Reminder set for {exe_time} minutes')
@@ -153,7 +147,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
+                        app_icon = "clock.ico",
                         timeout = 10)
                               
             elif 'you scared me' in query:
@@ -164,8 +158,7 @@ if __name__ == "__main__":
                     try:
                         speak("whom you want to send the email..")
                         to = takeCommand().lower() #+ "@gmial.com" # Specifing if needed
-                        # to = 'prashansdixit2005@gmail.com' # receiver's Email id
-                        # to = to.strip()
+                  
                         while True :
                             if to in dictid:
                                 print(f'The required email id is {dictid[to]}')
