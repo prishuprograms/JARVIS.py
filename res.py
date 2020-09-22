@@ -96,8 +96,6 @@ def sendEmail(to, content):
     server.sendmail('', to, content)
     server.close() 
 
-dictid = {
-    'monu' : 'prashansdixit2005@gmail.com',
-    'mantra' : 'dixitmantra@gmail.com',
+dictid = { "Specify your name and email id corespondingly.."
     
 }
