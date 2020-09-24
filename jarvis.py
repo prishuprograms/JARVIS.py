@@ -19,6 +19,7 @@ from res import *
 # Interraction...
 
 if __name__ == "__main__":
+    
     wishme()
     while True:
         query = takeCommand().lower()
@@ -33,7 +34,7 @@ if __name__ == "__main__":
             elif 'hello jarvis' in query:
                 while True:
                     hello_item = random.choice(hello_attri)
-                    playsound('point.wav')
+                    playsound('tudu.wav')
                     speak(hello_item)
                     break
             elif 'open stack overflow' in query:
@@ -73,7 +74,7 @@ if __name__ == "__main__":
                 speak("What should I search..")
                 query1 = takeCommand().lower()
                 try :
-                    print("Recognizing..")
+                    print("Initializing..")
                     print('Searching in Google..')
                     speak('According to google')
                     speak("Here is what I found..")
@@ -88,7 +89,7 @@ if __name__ == "__main__":
                 webbrowser.open("google.com")
                 speak("Opening Google")
             elif 'play music' in query:
-#                 music_dir = '(Your Music Dir.)'
+                music_dir = 'C:\\Users\\91829\\Desktop\\Downloads\\Songs'
                 songs = os.listdir(music_dir)
                 print(songs)
                 os.startfile(os.path.join(music_dir, songs[0]))
@@ -100,7 +101,13 @@ if __name__ == "__main__":
                 codepath = "C:\\Users\\91829\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
                 os.startfile(codepath)
                 speak("Opening Whatsapp")
+            elif 'open cmd' in query:
+                codepath = "%windir%\system32\cmd.exe"
                 os.startfile(codepath)
+            elif 'open vs code' in query:
+                codepath = "C:\\Users\\91829\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+                os.startfile(codepath)
+                speak("Opening VS code")
             elif 'hello to my friend' in query:
                 speak("Hello one and all")
             elif 'what is the weather' in query:
@@ -129,7 +136,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "clock.ico",
+                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
                         timeout = 10)
                 elif local_time < 60.0:
                     speak(f'Reminder set for {local_time} seconds')
@@ -138,7 +145,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "clock.ico",
+                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
                         timeout = 10)
                 elif local_time > 60.0:
                     speak(f'Reminder set for {exe_time} minutes')
@@ -147,7 +154,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "clock.ico",
+                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
                         timeout = 10)
                               
             elif 'you scared me' in query:
@@ -158,7 +165,7 @@ if __name__ == "__main__":
                     try:
                         speak("whom you want to send the email..")
                         to = takeCommand().lower() #+ "@gmial.com" # Specifing if needed
-                  
+                        # to = to.strip()
                         while True :
                             if to in dictid:
                                 print(f'The required email id is {dictid[to]}')
@@ -168,23 +175,23 @@ if __name__ == "__main__":
                                 sendEmail(toE, content)
                                 speak("Sending E-mail")
                                 speak("Email has been sent..!")
-                                playsound('point.wav')
+                                playsound('tudu.wav')
                                 break
                             else:
                                 speak("No such email id found..corresponding to name.")
-                                playsound('hit.wav')
+                                playsound('error.wav')
                                 break
                     except Exception as e:
                         print(e)
                         speak("Sorry! Sir... Email was not sent. Please try again")
-                        playsound('die.wav')
+                        playsound('replay.wav')
                     break
             elif 'exit' in query:
                 speak("Thank You sir for your time..")
-                playsound('swoosh.wav')
+                playsound('off.wav')
                 quit()
         except Exception as e:
             print(e)
-            playsound('hit.wav')
+            playsound('error.wav')
             speak('Unknown error occured.. ')
     
