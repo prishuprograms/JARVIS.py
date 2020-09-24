@@ -19,12 +19,6 @@ from res import *
 # creating API
 api_address='' # Find an API by signing in openweather and then put that in this space..
                # It starts with http and ends with a series of alphabets and numbers.
-# Sounds 
-# wing = playsound('wing.wav')
-# swoosh = playsound('swoosh.wav')
-# point = playsound('point.wav')
-# hit = playsound('hit.wav')
-# die = playsound('die.wav')
 
 # Hello random
 hello_attri = ['yes sir', 'yes master', 'order master', 'hy master', 'what to do sir']
@@ -33,7 +27,7 @@ hello_attri = ['yes sir', 'yes master', 'order master', 'hy master', 'what to do
 # generating engines
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[1].id) # 0 for male voice and 1 for female voice..
 
 
 # Foe speaking
@@ -96,6 +90,4 @@ def sendEmail(to, content):
     server.sendmail('your email same as above', to, content)
     server.close() 
 
-dictid = { "Specify your name and email id corespondingly.."
-    
-}
+dictid =  #"Specify your name and email id corespondingly..in dictionary format.."
