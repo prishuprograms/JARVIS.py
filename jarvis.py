@@ -92,20 +92,17 @@ if __name__ == "__main__":
                 music_dir = 'C:\\Users\\91829\\Desktop\\Downloads\\Songs'
                 songs = os.listdir(music_dir)
                 print(songs)
-                os.startfile(os.path.join(music_dir, songs[0]))
+                os.startfile(os.path.join(# music_directory_path, songs[0]))
                 speak("Playing Music")
             elif 'the time' in query:
                 strTime = datetime.datetime.now().strftime("%H:%M:%S")
                 speak(f"Sir, the current time is {strTime}")
-            elif 'open whatsapp' in query:
-                codepath = "C:\\Users\\91829\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
-                os.startfile(codepath)
-                speak("Opening Whatsapp")
-            elif 'open cmd' in query:
-                codepath = "%windir%\system32\cmd.exe"
-                os.startfile(codepath)
+            #elif 'open whatsapp' in query:
+               # codepath = "C:\\Users\\91829\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
+               # os.startfile(codepath)
+               # speak("Opening Whatsapp")
             elif 'open vs code' in query:
-                codepath = "C:\\Users\\91829\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+                codepath = "path to vs code if you want.."
                 os.startfile(codepath)
                 speak("Opening VS code")
             elif 'hello to my friend' in query:
@@ -118,7 +115,7 @@ if __name__ == "__main__":
                 format_add = json_data['weather'][0]['main']
                 speak(f"Its currently{format_add}in {city}")
             elif 'yourself'in query:
-                speak("I am Jarvis AI Ram 4 GB, SSD 256 GB,computing speed up to 3.068 giga hertz , intel icore 3, 8th generation, I am a python based assistant and  will become better with the course of time. My develpoer is Prashans Dixit")
+                speak("#The des. is up to you")
             elif "thanks" in query:
                 speak("Oh..my pleasure")
             elif 'set reminder' in query:
@@ -136,7 +133,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
+                        app_icon = "clock.ico",
                         timeout = 10)
                 elif local_time < 60.0:
                     speak(f'Reminder set for {local_time} seconds')
@@ -154,7 +151,7 @@ if __name__ == "__main__":
                     notification.notify(
                         title = title,
                         message ="Please see to your reminder",
-                        app_icon = "C:\\Users\\91829\\Desktop\\Main Prog\\Jarvis\\clock.ico",
+                        app_icon = "clock.ico",
                         timeout = 10)
                               
             elif 'you scared me' in query:
@@ -168,7 +165,7 @@ if __name__ == "__main__":
                         # to = to.strip()
                         while True :
                             if to in dictid:
-                                print(f'The required email id is {dictid[to]}')
+                                print(f'The required email id is {dictid[to]}') # First provide valid emails corresponding to name in samll letters in res.py file...
                                 toE = dictid[to]
                                 speak("What should I say to him?")
                                 content = takeCommand()
