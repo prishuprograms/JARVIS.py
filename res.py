@@ -18,7 +18,7 @@ from res import *
 
 # creating API
 api_address='' # Find an API by signing in openweather and then put that in this space..
-
+               # It starts with http and ends with a series of alphabets and numbers.
 # Sounds 
 # wing = playsound('wing.wav')
 # swoosh = playsound('swoosh.wav')
