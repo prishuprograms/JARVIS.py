@@ -17,7 +17,7 @@ import random
 from res import *
 
 # creating API
-api_address='http://api.openweathermap.org/data/2.5/weather?appid=0c42f7f6b53b244c78a418f4f181282a&q='
+api_address='' # Find an API by signing in openweather and then put that in this space..
 
 # Sounds 
 # wing = playsound('wing.wav')
